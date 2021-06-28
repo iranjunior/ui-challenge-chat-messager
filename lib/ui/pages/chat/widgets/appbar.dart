@@ -1,3 +1,4 @@
+import 'package:chat_messager/ui/pages/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_messager/constants/colors.dart';
@@ -21,6 +22,15 @@ class AppBarChatPage extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Color(kSecondaryColor),
       centerTitle: false,
       elevation: 0,
+      automaticallyImplyLeading: false,
+      leading: IconButton(
+          onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HomePage(),
+                ),
+              ),
+          icon: Icon(Icons.arrow_back_ios)),
       title: Row(
         children: [
           CircleAvatar(

@@ -18,7 +18,7 @@ class _ChatPageState extends State<ChatPage> {
     super.initState();
     initiSatusBarColor();
   }
-
+  
   Future<void> initiSatusBarColor() async {
     await FlutterStatusbarcolor.setStatusBarColor(Colors.transparent);
     FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
@@ -33,7 +33,9 @@ class _ChatPageState extends State<ChatPage> {
         title: destinatary.name,
         action: 'typing...',
         image: destinatary.image,
+
       ),
+      
       backgroundColor: Color(kSecondaryColor),
       body: Stack(
         children: [

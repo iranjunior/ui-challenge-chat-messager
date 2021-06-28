@@ -1,3 +1,4 @@
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:chat_messager/helpers/build_conversation.dart';
 import 'package:chat_messager/models/models.dart';
 import 'package:chat_messager/ui/pages/home/widgets/widgets.dart';
@@ -12,6 +13,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final conversation = buildConversations();
+  @override
+  void initState() {
+    super.initState();
+    initiSatusBarColor();
+  }
+  
+
+  Future<void> initiSatusBarColor() async {
+    await FlutterStatusbarcolor.setStatusBarColor(Colors.transparent);
+    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
+    FlutterStatusbarcolor.setNavigationBarWhiteForeground(false);
+  }
 
   @override
   Widget build(BuildContext context) {
